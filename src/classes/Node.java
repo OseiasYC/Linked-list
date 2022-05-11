@@ -1,6 +1,6 @@
 package classes;
 
-public class Tie {
+public class Node {
     public String information;
-    public Tie next;
+    public Node next;
 }

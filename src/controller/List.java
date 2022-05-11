@@ -1,38 +1,38 @@
 package controller;
 
-import classes.Tie;
+import classes.Node;
 
 public class List {
-    Tie head;
+    Node head;
     int size;
 
     public void setHead(String information) {
-        Tie tie = new Tie();
-        tie.information = information;
-        tie.next = head;
-        head = tie;
+        Node node = new Node();
+        node.information = information;
+        node.next = head;
+        head = node;
         size++;
     }
 
     public void setTail(String information) {
-        Tie tie = new Tie();
-        tie.information = information;
+        Node node = new Node();
+        node.information = information;
         if (head == null) {
-            head = tie;
-            tie.next = null;
+            head = node;
+            node.next = null;
         } else {
-            Tie local = head;
+            Node local = head;
             while (local.next != null) {
                 local = local.next;
             }
-            local.next = tie;
-            tie.next = null;
+            local.next = node;
+            node.next = null;
         }
         size++;
     }
 
     public boolean findString(String information) {
-        Tie local = head;
+        Node local = head;
         boolean result = false;
         for (int i = 0; i < size; i++) {
             if (local.information.equals(information)) {
@@ -46,7 +46,7 @@ public class List {
     @Override
     public String toString() {
         String str = "(" + size + ") ";
-        Tie local = head;
+        Node local = head;
         while (local != null) {
             str += "[" + local.information + "] ";
             local = local.next;
@@ -62,7 +62,7 @@ public class List {
         } else if (position == size - 1) {
             removeTail();
         }
-        Tie local = head;
+        Node local = head;
         for (int index = 0; index < position - 1; index++) {
             local = local.next;
         }
@@ -86,9 +86,9 @@ public class List {
         if (head == null) {
             return null;
         }
-        Tie local = head;
+        Node local = head;
         while (local.next != null) {
-            Tie aid = local;
+            Node aid = local;
             local = local.next;
             if (local.next == null) {
                 aid.next = null;

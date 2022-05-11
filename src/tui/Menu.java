@@ -12,7 +12,7 @@ public class Menu {
     public void MenuTUI() {
 
         System.out.print("----------------------------------" +
-                "\n 1- Set a head in list\n 2- Set a tail in list\n 3- Remove index\n 4- Show list\n 5- Find in the list\n 0- Close\n\nPut your choice: ");
+                "\n 1- Set a head in list\n 2- Set a node in list\n 3- Remove index\n 4- Show list\n 5- Find in the list\n 0- Close\n\nPut your choice: ");
         choice = input.next();
 
         switch (choice) {
